@@ -115,11 +115,8 @@
     <header>
         <h1>4 Anos de Amor</h1>
         <p>Uma jornada cheia de momentos especiais, começando pela nossa música! 🥺❤<br></p>
-        <!-- Player do YouTube -->
-        <div class="video-section">
-            <h2>Nosso Vídeo Especial</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/R1X8UXYJzL4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
+        <!-- Vídeo do YouTube -->
+        <iframe width="500" height="315" src="https://www.youtube.com/embed/R1X8UXYJzL4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <div class="timer" id="timeTogether">Carregando...</div>
         <div class="countdown" id="countdown">Carregando...</div>
     </header>
@@ -152,6 +149,11 @@
         </div>
     </section>
 
+    <section class="video-section">
+        <h2>Nosso Vídeo Especial</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/XGGRg8asnc8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </section>
+
     <footer>
         <p>Com amor, para sempre. ❤️</p>
     </footer>
@@ -171,6 +173,13 @@
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
             const timeTogetherText = `Estamos juntos há ${years} anos, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos.`;
-            const countdownText = `Faltam ${Math.max(0, 4
-::contentReference[oaicite:0]{index=0}
- 
+            const countdownText = `Faltam ${Math.max(0, 4 - years)} anos, ${Math.max(0, 365 - days)} dias, ${Math.max(0, 23 - hours)} horas, ${Math.max(0, 59 - minutes)} minutos e ${Math.max(0, 59 - seconds)} segundos para o nosso 4º aniversário.`;
+
+            document.getElementById("timeTogether").innerText = timeTogetherText;
+            document.getElementById("countdown").innerText = countdownText;
+        }
+
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>
