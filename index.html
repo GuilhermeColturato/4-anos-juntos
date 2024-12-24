@@ -31,78 +31,37 @@
             margin: 10px 0 0;
         }
 
-        .timer, .countdown {
-            font-size: 1.5rem;
-            color: #555;
-            margin-top: 20px;
-            transition: all 0.5s ease-in-out;
+        .timers-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        .timeline {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
+        .timer-table {
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .timeline h2 {
-            text-align: center;
-            color: #ff6b6b;
-            margin-bottom: 20px;
-        }
-
-        .timeline-item {
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-item img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .timeline-item img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .timeline-item .content {
-            max-width: 500px;
-        }
-
-        .timeline-item .content h3 {
-            font-size: 1.5rem;
-            color: #ff6b6b;
-        }
-
-        .timeline-item .content p {
-            font-size: 1rem;
-            margin-top: 5px;
-        }
-
-        .video-section {
-            text-align: center;
-            margin: 40px auto;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
         }
 
-        .video-section h2 {
+        .timer-table h2 {
             color: #ff6b6b;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+        }
+
+        .timer-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            padding: 5px 0;
+        }
+
+        .timer-row span {
+            font-weight: bold;
         }
 
         footer {
@@ -116,69 +75,31 @@
         footer p {
             margin: 0;
         }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .timeline-item {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .timeline-item img {
-                margin: 10px auto;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
         <h1>4 Anos de Amor</h1>
-        <p>Uma jornada cheia de momentos especiais, começando pela nossa música, deixe tocar! 🎵🥰❤️</p>
-        <br>
-        <!-- Vídeo do YouTube -->
-        <iframe width="400" height="315" src="https://www.youtube.com/embed/R1X8UXYJzL4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <div class="timer" id="timeTogether">Carregando...</div>
-        <div class="countdown" id="countdown">Carregando...</div>
+        <p>Uma jornada cheia de momentos especiais. 🎵🥰❤️</p>
+        <div class="timers-container">
+            <div class="timer-table" id="timeTogetherTable">
+                <h2>Juntos há</h2>
+                <div class="timer-row"><span id="yearsTogether">0</span> anos</div>
+                <div class="timer-row"><span id="daysTogether">0</span> dias</div>
+                <div class="timer-row"><span id="hoursTogether">0</span> horas</div>
+                <div class="timer-row"><span id="minutesTogether">0</span> minutos</div>
+                <div class="timer-row"><span id="secondsTogether">0</span> segundos</div>
+            </div>
+            <div class="timer-table" id="countdownTable">
+                <h2>Faltam para o nosso 4° aniversário</h2>
+                <div class="timer-row"><span id="yearsLeft">0</span> anos</div>
+                <div class="timer-row"><span id="daysLeft">0</span> dias</div>
+                <div class="timer-row"><span id="hoursLeft">0</span> horas</div>
+                <div class="timer-row"><span id="minutesLeft">0</span> minutos</div>
+                <div class="timer-row"><span id="secondsLeft">0</span> segundos</div>
+            </div>
+        </div>
     </header>
-
-    <section class="timeline">
-        <h2>Nossa História</h2>
-        
-        <div class="timeline-item">
-            <img src="https://via.placeholder.com/150" alt="Primeiro encontro">
-            <div class="content">
-                <h3>Nosso Primeiro Encontro</h3>
-                <p>O dia que nossas vidas mudaram para sempre.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <img src="https://via.placeholder.com/150" alt="Primeira viagem">
-            <div class="content">
-                <h3>Primeira Viagem Juntos</h3>
-                <p>Explorando o mundo e criando memórias inesquecíveis.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <img src="https://via.placeholder.com/150" alt="Aniversário de namoro">
-            <div class="content">
-                <h3>Primeiro Aniversário</h3>
-                <p>Celebrando um ano de amor e parceria.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="video-section">
-        <h2>Nosso Vídeo Especial</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YM4b2_wvsFw?si=9E5finpmwWF-Osbz" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-        </iframe>
-    </section>
 
     <footer>
         <p>Com amor, para sempre. ❤️</p>
@@ -187,35 +108,42 @@
     <script>
         const startDate = new Date('2020-12-27T00:00:00'); // Data do início do relacionamento
         const fourYearDate = new Date('2024-12-27T00:00:00'); // Data do 4º aniversário
-    
+
         function updateTimer() {
             const now = new Date();
             const diff = now - startDate; // Tempo total juntos
             const timeToFourYear = fourYearDate - now; // Tempo até o 4º aniversário
-    
-            // Cálculo do tempo juntos
-            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
-            // Cálculo do tempo restante para o 4º aniversário
-            const countdownDays = Math.floor(timeToFourYear / (1000 * 60 * 60 * 24));
-            const countdownHours = Math.floor((timeToFourYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const countdownMinutes = Math.floor((timeToFourYear % (1000 * 60 * 60)) / (1000 * 60));
-            countdownSeconds = Math.floor((timeToFourYear % (1000 * 60)) / 1000);
-    
-    // Atualizar contadores no DOM
-    document.getElementById('timeTogether').textContent =
-        `${years} anos, ${days} dias, ${hours}h ${minutes}m ${seconds}s juntos.`;
-    document.getElementById('countdown').textContent =
-        `Faltam ${countdownDays} dias, ${countdownHours}h ${countdownMinutes}m ${countdownSeconds}s para nosso 4º aniversário.`;
-}
 
-setInterval(updateTimer, 1000);
-updateTimer(); // Executa ao carregar
-</script>
+            // Cálculo do tempo juntos
+            const yearsTogether = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            const daysTogether = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+            const hoursTogether = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutesTogether = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secondsTogether = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // Cálculo do tempo restante para o 4º aniversário
+            const yearsLeft = Math.max(0, Math.floor(timeToFourYear / (1000 * 60 * 60 * 24 * 365)));
+            const daysLeft = Math.max(0, Math.floor((timeToFourYear % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24)));
+            const hoursLeft = Math.max(0, Math.floor((timeToFourYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            const minutesLeft = Math.max(0, Math.floor((timeToFourYear % (1000 * 60 * 60)) / (1000 * 60)));
+            const secondsLeft = Math.max(0, Math.floor((timeToFourYear % (1000 * 60)) / 1000));
+
+            // Atualizando os textos
+            document.getElementById('yearsTogether').innerText = yearsTogether;
+            document.getElementById('daysTogether').innerText = daysTogether;
+            document.getElementById('hoursTogether').innerText = hoursTogether;
+            document.getElementById('minutesTogether').innerText = minutesTogether;
+            document.getElementById('secondsTogether').innerText = secondsTogether;
+
+            document.getElementById('yearsLeft').innerText = yearsLeft;
+            document.getElementById('daysLeft').innerText = daysLeft;
+            document.getElementById('hoursLeft').innerText = hoursLeft;
+            document.getElementById('minutesLeft').innerText = minutesLeft;
+            document.getElementById('secondsLeft').innerText = secondsLeft;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
 </body>
 </html>
-
