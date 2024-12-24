@@ -97,7 +97,7 @@
         }
 
         .timeline-item img {
-            width: 150px;
+            width: 100px;
             height: 150px;
             border-radius: 50%;
             margin: 0 20px;
@@ -150,17 +150,31 @@
             margin: 0;
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
-            .timeline-item {
-                flex-direction: column;
-                text-align: center;
-            }
+    .timeline-item {
+        flex-direction: column; /* Ajusta os itens da linha do tempo para coluna em telas menores */
+        text-align: center;
+    }
 
-            .timeline-item img {
-                margin: 10px auto;
-            }
-        }
+    .timeline-item img {
+        margin: 10px auto; /* Ajusta o espaço da imagem */
+    }
+
+    .timer-box {
+        width: 100%; /* Garante que a caixa de tempo ocupe toda a largura disponível */
+        max-width: 100%; /* Permite que ocupe toda a largura na tela pequena */
+        margin: 0 10px; /* Adiciona espaçamento lateral */
+    }
+
+    .timers {
+        flex-direction: column; /* Alinha as caixas de tempo em coluna */
+    }
+
+    iframe {
+        width: 100%; /* Ajusta o vídeo para ocupar toda a largura disponível */
+        max-width: 400px; /* Limita o tamanho do vídeo */
+    }
+}
     </style>
 </head>
 <body>
