@@ -239,40 +239,46 @@
         const anniversaryDate = new Date('2024-12-24T00:00:00'); // Próximo aniversário
 
         function updateTimers() {
-            const now = new Date();
+    const now = new Date();
 
-            // Calculando o tempo juntos
-            const timeTogether = now - startDate;
-            const togetherYears = Math.floor(timeTogether / (1000 * 60 * 60 * 24 * 365));
-            const togetherDays = Math.floor((timeTogether % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
-            const togetherHours = Math.floor((timeTogether % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const togetherMinutes = Math.floor((timeTogether % (1000 * 60 * 60)) / (1000 * 60));
-            const togetherSeconds = Math.floor((timeTogether % (1000 * 60)) / 1000);
+    // Calculando o tempo juntos
+    const timeTogether = now - startDate;
+    const togetherYears = Math.floor(timeTogether / (1000 * 60 * 60 * 24 * 365));
+    const togetherDays = Math.floor((timeTogether % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+    const togetherHours = Math.floor((timeTogether % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const togetherMinutes = Math.floor((timeTogether % (1000 * 60 * 60)) / (1000 * 60));
+    const togetherSeconds = Math.floor((timeTogether % (1000 * 60)) / 1000);
 
-            document.getElementById('timeTogether').innerHTML = `
-                <span>${togetherYears} Anos</span>
-                <span>${togetherDays} Dias</span>
-                <span>${togetherHours} Horas</span>
-                <span>${togetherMinutes} Minutos</span>
-                <span>${togetherSeconds} Segundos</span>
-            `;
+    document.getElementById('timeTogether').innerHTML = `
+        <span>${togetherYears} Anos</span><br>
+        <span>${togetherDays} Dias</span><br>
+        <span>${togetherHours} Horas</span><br>
+        <span>${togetherMinutes} Minutos</span><br>
+        <span>${togetherSeconds} Segundos</span>
+    `;
 
-            // Calculando o tempo restante para o próximo aniversário
-            const timeUntilAnniversary = anniversaryDate - now;
-            const countdownYears = Math.floor(timeUntilAnniversary / (1000 * 60 * 60 * 24 * 365));
-            const countdownDays = Math.floor((timeUntilAnniversary % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
-            const countdownHours = Math.floor((timeUntilAnniversary % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const countdownMinutes = Math.floor((timeUntilAnniversary % (1000 * 60 * 60)) / (1000 * 60));
-            const countdownSeconds = Math.floor((timeUntilAnniversary % (1000 * 60)) / 1000);
+    // Calculando o tempo restante para o próximo aniversário
+    const timeUntilAnniversary = anniversaryDate - now;
 
-            document.getElementById('countdown').innerHTML = `
-                <span>${countdownYears} Anos</span>
-                <span>${countdownDays} Dias</span>
-                <span>${countdownHours} Horas</span>
-                <span>${countdownMinutes} Minutos</span>
-                <span>${countdownSeconds} Segundos</span>
-            `;
-        }
+    if (timeUntilAnniversary > 0) {
+        const countdownDays = Math.floor(timeUntilAnniversary / (1000 * 60 * 60 * 24));
+        const countdownHours = Math.floor((timeUntilAnniversary % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const countdownMinutes = Math.floor((timeUntilAnniversary % (1000 * 60 * 60)) / (1000 * 60));
+        const countdownSeconds = Math.floor((timeUntilAnniversary % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown').innerHTML = `
+            <span>${countdownDays} Dias</span><br>
+            <span>${countdownHours} Horas</span><br>
+            <span>${countdownMinutes} Minutos</span><br>
+            <span>${countdownSeconds} Segundos</span>
+        `;
+    } else {
+        document.getElementById('countdown').innerHTML = `
+            <span>Parabéns pelo 4º aniversário! 🎉</span>
+        `;
+    }
+}
+
 
         // Atualiza os timers a cada segundo
         setInterval(updateTimers, 1000);
