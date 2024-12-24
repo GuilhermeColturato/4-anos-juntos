@@ -31,27 +31,11 @@
             margin: 10px 0 0;
         }
 
-        .contador {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .tempo {
-            text-align: center;
-        }
-
-        .valor {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .descricao {
-            font-size: 1rem;
-            color: #cccccc;
+        .timer, .countdown {
+            font-size: 1.5rem;
+            color: #555;
+            margin-top: 20px;
+            transition: all 0.5s ease-in-out;
         }
 
         .timeline {
@@ -85,6 +69,12 @@
             border-radius: 50%;
             margin: 0 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .timeline-item .content {
@@ -126,6 +116,18 @@
         footer p {
             margin: 0;
         }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline-item img {
+                margin: 10px auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -135,28 +137,8 @@
         <br>
         <!-- Vídeo do YouTube -->
         <iframe width="400" height="315" src="https://www.youtube.com/embed/R1X8UXYJzL4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <div class="contador">
-            <div class="tempo">
-                <span class="valor" id="anos">0</span>
-                <span class="descricao">anos</span>
-            </div>
-            <div class="tempo">
-                <span class="valor" id="dias">0</span>
-                <span class="descricao">dias</span>
-            </div>
-            <div class="tempo">
-                <span class="valor" id="horas">0</span>
-                <span class="descricao">horas</span>
-            </div>
-            <div class="tempo">
-                <span class="valor" id="minutos">0</span>
-                <span class="descricao">minutos</span>
-            </div>
-            <div class="tempo">
-                <span class="valor" id="segundos">0</span>
-                <span class="descricao">segundos</span>
-            </div>
-        </div>
+        <div class="timer" id="timeTogether">Carregando...</div>
+        <div class="countdown" id="countdown">Carregando...</div>
     </header>
 
     <section class="timeline">
@@ -204,30 +186,36 @@
 
     <script>
         const startDate = new Date('2020-12-27T00:00:00'); // Data do início do relacionamento
-
+        const fourYearDate = new Date('2024-12-27T00:00:00'); // Data do 4º aniversário
+    
         function updateTimer() {
             const now = new Date();
-            const diff = now - startDate;
-
+            const diff = now - startDate; // Tempo total juntos
+            const timeToFourYear = fourYearDate - now; // Tempo até o 4º aniversário
+    
             // Cálculo do tempo juntos
             const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
             const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+            // Cálculo do tempo restante para o 4º aniversário
+            const countdownDays = Math.floor(timeToFourYear / (1000 * 60 * 60 * 24));
+            const countdownHours = Math.floor((timeToFourYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const countdownMinutes = Math.floor((timeToFourYear % (1000 * 60 * 60)) / (1000 * 60));
+            countdownSeconds = Math.floor((timeToFourYear % (1000 * 60)) / 1000);
+    
+    // Atualizar contadores no DOM
+    document.getElementById('timeTogether').textContent =
+        `${years} anos, ${days} dias, ${hours}h ${minutes}m ${seconds}s juntos.`;
+    document.getElementById('countdown').textContent =
+        `Faltam ${countdownDays} dias, ${countdownHours}h ${countdownMinutes}m ${countdownSeconds}s para nosso 4º aniversário.`;
+}
 
-            // Atualizando os elementos HTML
-            document.getElementById('anos').innerText = years;
-            document.getElementById('dias').innerText = days;
-            document.getElementById('horas').innerText = hours;
-            document.getElementById('minutos').innerText = minutes;
-            document.getElementById('segundos').innerText = seconds;
-        }
-
-        // Atualizar o contador a cada segundo
-        setInterval(updateTimer, 1000);
-        updateTimer(); // Chamada inicial para exibir o contador imediatamente
-    </script>
+setInterval(updateTimer, 1000);
+updateTimer(); // Executa ao carregar
+</script>
 </body>
 </html>
 
