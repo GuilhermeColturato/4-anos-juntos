@@ -67,6 +67,8 @@
             padding: 5px 10px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin-bottom: 10px;
         }
 
         .timeline {
@@ -267,10 +269,10 @@
         const countdownSeconds = Math.floor((timeUntilAnniversary % (1000 * 60)) / 1000);
 
         document.getElementById('countdown').innerHTML = `
-            <p>${countdownDays} Dias</p>
-            <p>${countdownHours} Horas</p>
-            <p>${countdownMinutes} Minutos</p>
-            <p>${countdownSeconds} Segundos</p>
+            <span>${countdownDays} Dias</span><br>
+            <span>${countdownHours} Horas</span><br>
+            <span>${countdownMinutes} Minutos</span><br>
+            <span>${countdownSeconds} Segundos</span>
         `;
     } else {
         document.getElementById('countdown').innerHTML = `
