@@ -115,17 +115,11 @@
     <header>
         <h1>4 Anos de Amor</h1>
         <p>Uma jornada cheia de momentos especiais, começando pela nossa música.</p>
-        <!-- Música de fundo do Spotify -->
-        <section class="music-player">
-            <iframe style="border-radius:12px" 
-                    src="https://open.spotify.com/embed/track/5MnZisUGPBNKrV4jF9BHt8?utm_source=generator&theme=0" 
-                    width="100%" 
-                    height="152" 
-                    frameborder="0" 
-                    allowfullscreen="" 
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                    loading="lazy"></iframe>
-        </section>
+        <!-- Música de fundo -->
+        <audio autoplay loop>
+            <source src="caminho/para/sua-musica.mp3" type="audio/mp3">
+            Seu navegador não suporta a tag de áudio.
+        </audio>
         <div class="timer" id="timeTogether">Carregando...</div>
         <div class="countdown" id="countdown">Carregando...</div>
     </header>
@@ -179,16 +173,6 @@
             const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            const timeTogetherText = `Estamos juntos há ${years} anos, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos.`;
-            const countdownText = `Faltam ${Math.max(0, 4 - years)} anos, ${Math.max(0, 365 - days)} dias, ${Math.max(0, 23 - hours)} horas, ${Math.max(0, 59 - minutes)} minutos e ${Math.max(0, 59 - seconds)} segundos para o 4º aniversário.`;
-
-            document.getElementById("timeTogether").innerText = timeTogetherText;
-            document.getElementById("countdown").innerText = countdownText;
-        }
-
-        setInterval(updateTimer, 1000);
-    </script>
-</body>
-</html>
+            const seconds = Math.floor((diff % (1000 * 60
+::contentReference[oaicite:0]{index=0}
+ 
