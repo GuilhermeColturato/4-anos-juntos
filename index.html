@@ -114,7 +114,7 @@
 <body>
     <header>
         <h1>4 Anos de Amor</h1>
-        <p>Uma jornada cheia de momentos especiais, começando pela nossa música! 🥰❤️</p>
+        <p>Uma jornada cheia de momentos especiais, começando pela nossa música, deixe tocar! 🎵🥰❤️</p>
         <br>
         <!-- Vídeo do YouTube -->
         <iframe width="400" height="315" src="https://www.youtube.com/embed/R1X8UXYJzL4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -168,25 +168,41 @@
     <script>
         const startDate = new Date('2020-12-27T00:00:00'); // Data do início do relacionamento
         const fourYearDate = new Date('2024-12-27T00:00:00'); // Data do 4º aniversário
-
+    
         function updateTimer() {
             const now = new Date();
-            const diff = now - startDate;
-
+            const diff = now - startDate; // Tempo total juntos
+            const timeToFourYear = fourYearDate - now; // Tempo até o 4º aniversário
+    
+            // Cálculo do tempo juntos
             const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
             const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
+    
+            // Cálculo do tempo restante para o 4º aniversário
+            const countdownDays = Math.floor(timeToFourYear / (1000 * 60 * 60 * 24));
+            const countdownHours = Math.floor((timeToFourYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const countdownMinutes = Math.floor((timeToFourYear % (1000 * 60 * 60)) / (1000 * 60));
+            const countdownSeconds = Math.floor((timeToFourYear % (1000 * 60)) / 1000);
+    
+            // Atualizando os textos
             const timeTogetherText = `Estamos juntos há ${years} anos, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos.`;
-            const countdownText = `Faltam ${Math.max(0, 4 - years)} anos, ${Math.max(0, 365 - days)} dias, ${Math.max(0, 23 - hours)} horas, ${Math.max(0, 59 - minutes)} minutos e ${Math.max(0, 59 - seconds)} segundos para o nosso 4º aniversário.`;
-
+            let countdownText;
+    
+            if (timeToFourYear > 0) {
+                countdownText = `Faltam ${countdownDays} dias, ${countdownHours} horas, ${countdownMinutes} minutos e ${countdownSeconds} segundos para o nosso 4º aniversário.`;
+            } else {
+                countdownText = `Completamos 4 anos juntos! ❤️`;
+            }
+    
             document.getElementById("timeTogether").innerText = timeTogetherText;
             document.getElementById("countdown").innerText = countdownText;
         }
-
+    
         setInterval(updateTimer, 1000);
     </script>
+    
 </body>
 </html>
