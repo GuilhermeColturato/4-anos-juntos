@@ -235,8 +235,8 @@
     </footer>
 
     <script>
-        const startDate = new Date('2020-12-24T00:00:00'); // Data inicial do relacionamento
-        const anniversaryDate = new Date('2024-12-24T00:00:00'); // Próximo aniversário
+        const startDate = new Date('2020-12-27T00:00:00'); // Data inicial do relacionamento
+        const anniversaryDate = new Date('2024-12-27T00:00:00'); // Próximo aniversário
 
         function updateTimers() {
     const now = new Date();
@@ -267,14 +267,14 @@
         const countdownSeconds = Math.floor((timeUntilAnniversary % (1000 * 60)) / 1000);
 
         document.getElementById('countdown').innerHTML = `
-            <span>${countdownDays} Dias</span><br>
-            <span>${countdownHours} Horas</span><br>
-            <span>${countdownMinutes} Minutos</span><br>
-            <span>${countdownSeconds} Segundos</span>
+            <p>${countdownDays} Dias</p>
+            <p>${countdownHours} Horas</p>
+            <p>${countdownMinutes} Minutos</p>
+            <p>${countdownSeconds} Segundos</p>
         `;
     } else {
         document.getElementById('countdown').innerHTML = `
-            <span>Parabéns pelo 4º aniversário! 🎉</span>
+            <span>Completamos o nosso 4º aniversário! 🎉</span>
         `;
     }
 }
