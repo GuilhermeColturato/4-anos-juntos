@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-
+
+scale=1.0">
+    <title>4 Anos Juntos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+        }
+
+        .timers {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .timer-box {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 470px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .timer-box h3 {
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .timer-box .time {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .time span {
+            font-size: 1.2rem;
+            background: #ffe4e1;
+            color: #ff6b6b;
+            padding: 5px 1px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin-bottom: 1px;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline h2 {
+            text-align: center;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-item img {
+            width: 100px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-item .content {
+            max-width: 500px;
+        }
+
+        .timeline-item .content h3 {
+            font-size: 1.5rem;
+            color: #ff6b6b;
+        }
+
+        .timeline-item .content p {
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        .video-section {
+            text-align: center;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-section h2 {
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center; /* Centraliza as imagens */
+            gap: 20px; /* Espaçamento entre as imagens */
+        }
+
+        .image-container img {
+            width: 45%; /* Ajuste o tamanho das imagens conforme
+
+necessário */
+        }
+
+
+        @media (max-width: 600px) {
+    .timeline-item {
+        flex-direction: column; /* Ajusta os itens da linha do tempo para
+
+coluna em telas menores */
+        text-align: center;
+    }
+
+    .timeline-item img {
+        margin: 10px auto; /* Ajusta o espaço da imagem */
+    }
+
+    .timer-box {
+        width: 85%; /* Garante que a caixa de tempo ocupe toda a
+
+largura disponível */
+        max-width: 85%; /* Permite que ocupe toda a largura na tela
+
+pequena */
+        margin: 0 0px; /* Adiciona espaçamento lateral */
+    }
+
+    .timers {
+        flex-direction: column; /* Alinha as caixas de tempo em coluna */
+    }
+
+    iframe {
+        width: 90%; /* Ajusta o vídeo para ocupar toda a largura
+
+disponível */
+        max-width: 400px; /* Limita o tamanho do vídeo */
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>4 Anos de Amor</h1>
+        <p>Uma jornada cheia de momentos especiais, começando pela
+
+nossa música, deixe tocar! 🎵🥰❤️</p>
+        <br>
+        <iframe width="300" height="315"
+
+src="https://www.youtube.com/embed/R1X8UXYJzL4"
+
+frameborder="0" allow="autoplay; encrypted-media"
+
+allowfullscreen></iframe>
+        <div class="timers">
+            <div class="timer-box">
+                <h3>Juntos há:</h3>
+                <div class="time" id="timeTogether">
+                    <p><span>Anos</span></p>
+                    <span>Dias</span>
+                    <span>Horas</span>
+                    <span>Minutos</span>
+                    <span>Segundos</span>
+                </div>
+            </div>
+
+            <div class="timer-box">
+                <h3>Faltam para o 4° aniversário:</h3>
+                <div class="time" id="countdown">
+                    <span>Anos</span>
+                    <span>Dias</span>
+                    <span>Horas</span>
+                    <span>Minutos</span>
+                    <span>Segundos</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+  <section class="timeline">
+    <h2>Nossa História</h2>
+
+    <div class="timeline-item">
+        <img src="maos.jpeg" alt="Primeiro encontro">
+        <div class="content">
+            <h3>Nossa Primeira Foto</h3>
+            <p>O dia que nossas vidas mudaram para sempre.</p>
+        </div>
+    </div>
+
+   
+        <div class="image-container">
+            <img src="teste.jpeg" alt="Primeira viagem">
+            <img src="teste1.jpeg" alt="Primeira viagem">
+        </div>
+    <div class="timeline-item">
+        <div class="content">
+            <h3>Tantos Momentos e Viagens Juntos</h3>
+            <p>Explorando o mundo e criando memórias
+
+inesquecíveis.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <img src="quatroanos.webp" alt="Aniversário de namoro">
+        <div class="content">
+            <h3>Natal e 4 Anos de Nós</h3>
+            <p>Celebrando 4 anos de amor e parceria.</p>
+        </div>
+    </div>
+</section>
+
+     <section class="video-section">
+        <h2>Nosso Vídeo Especial</h2>
+        <iframe width="300" height="315"
+
+src="https://www.youtube.com/embed/YM4b2_wvsFw?
+
+si=9E5finpmwWF-Osbz"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write;
+
+encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+        </iframe>
+    </section>
+
+    <footer>
+        <p>Com amor, para sempre. ❤️</p>
+    </footer>
+
+    <script>
+        const startDate = new Date('2020-12-28T00:00:00'); // Data inicial do relacionamento
+        const anniversaryDate = new Date('2024-12-27T00:00:00'); //Próximo aniversário
+
+        function updateTimers() {
+    const now = new Date();
+
+    // Calculando o tempo juntos
+    const timeTogether = now - startDate;
+    const togetherYears = Math.floor(timeTogether / (1000 * 60 * 60 * 24
+
+* 365));
+    const togetherDays = Math.floor((timeTogether % (1000 * 60 * 60 *
+
+24 * 365)) / (1000 * 60 * 60 * 24));
+    const togetherHours = Math.floor((timeTogether % (1000 * 60 * 60 *
+
+24)) / (1000 * 60 * 60));
+    const togetherMinutes = Math.floor((timeTogether % (1000 * 60 *
+
+60)) / (1000 * 60));
+    const togetherSeconds = Math.floor((timeTogether % (1000 * 60)) /
+
+1000);
+
+    document.getElementById('timeTogether').innerHTML = `
+        <span>${togetherYears} Anos</span><br>
+        <span>${togetherDays} Dias</span><br>
+        <span>${togetherHours} Horas</span><br>
+        <span>${togetherMinutes} Minutos</span><br>
+        <span>${togetherSeconds} Segundos</span>
+    `;
+
+    // Calculando o tempo restante para o próximo aniversário
+    const timeUntilAnniversary = anniversaryDate - now;
+
+    if (timeUntilAnniversary > 0) {
+        const countdownDays = Math.floor(timeUntilAnniversary / (1000
+
+* 60 * 60 * 24));
+        const countdownHours = Math.floor((timeUntilAnniversary %
+
+(1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const countdownMinutes = Math.floor((timeUntilAnniversary %
+
+(1000 * 60 * 60)) / (1000 * 60));
+        const countdownSeconds = Math.floor((timeUntilAnniversary %
+
+(1000 * 60)) / 1000);
+
+        document.getElementById('countdown').innerHTML = `
+            <span>${countdownDays} Dias</span><br>
+            <span>${countdownHours} Horas</span><br>
+            <span>${countdownMinutes} Minutos</span><br>
+            <span>${countdownSeconds} Segundos</span>
+        `;
+    } else {
+        document.getElementById('countdown').innerHTML = `
+            <span>Completamos o nosso 4º aniversário! 🎉</span>
+        `;
+    }
+}
+
+
+        // Atualiza os timers a cada segundo
+        setInterval(updateTimers, 1000);
+        updateTimers();
+    </script>
+</body>
+</html>
