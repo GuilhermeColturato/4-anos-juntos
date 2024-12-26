@@ -2,9 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-
-
-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4 Anos Juntos</title>
     <style>
         body {
@@ -159,17 +157,12 @@ scale=1.0">
         }
 
         .image-container img {
-            width: 45%; /* Ajuste o tamanho das imagens conforme
-
-necessário */
+            width: 45%; /* Ajuste o tamanho das imagens conforme necessário */
         }
-
 
         @media (max-width: 600px) {
     .timeline-item {
-        flex-direction: column; /* Ajusta os itens da linha do tempo para
-
-coluna em telas menores */
+        flex-direction: column; /* Ajusta os itens da linha do tempo para coluna em telas menores */
         text-align: center;
     }
 
@@ -178,12 +171,8 @@ coluna em telas menores */
     }
 
     .timer-box {
-        width: 85%; /* Garante que a caixa de tempo ocupe toda a
-
-largura disponível */
-        max-width: 85%; /* Permite que ocupe toda a largura na tela
-
-pequena */
+        width: 85%; /* Garante que a caixa de tempo ocupe toda a largura disponível */
+        max-width: 85%; /* Permite que ocupe toda a largura na tela pequena */
         margin: 0 0px; /* Adiciona espaçamento lateral */
     }
 
@@ -192,9 +181,7 @@ pequena */
     }
 
     iframe {
-        width: 90%; /* Ajusta o vídeo para ocupar toda a largura
-
-disponível */
+        width: 90%; /* Ajusta o vídeo para ocupar toda a largura disponível */
         max-width: 400px; /* Limita o tamanho do vídeo */
     }
 }
@@ -206,13 +193,7 @@ disponível */
         <p><strong>Uma jornada cheia de momentos especiais</strong></p>
         <p>Começando pela nossa música, a melodia do nosso amor, deixe tocar! <br>🎵🥰❤️</p>
         <br>
-        <iframe width="300" height="315"
-
-src="https://www.youtube.com/embed/R1X8UXYJzL4"
-
-frameborder="0" allow="autoplay; encrypted-media"
-
-allowfullscreen></iframe>
+        <iframe width="300" height="315" src="https://www.youtube.com/embed/R1X8UXYJzL4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <div class="timers">
             <div class="timer-box">
                 <h3>Juntos há:</h3>
@@ -240,7 +221,6 @@ allowfullscreen></iframe>
 
   <section class="timeline">
     <h2>Nossa História</h2>
-
     <div class="timeline-item">
         <img src="maos.jpeg" alt="Primeiro encontro">
         <div class="content">
@@ -255,6 +235,7 @@ allowfullscreen></iframe>
             <p>Explorando o mundo e criando memórias inesquecíveis.</p>
         </div>
     </div>
+
     <div class="image-container">
         <img src="teste.jpeg" alt="Primeira viagem">
         <img src="teste1.jpeg" alt="Primeira viagem">
@@ -274,8 +255,9 @@ allowfullscreen></iframe>
             <p>Obrigada por tudo, por todos os momentos, por todo o amor e por ser a pessoa mais incrível do meu mundo, eu te amo mais que tudo.</p>
         </div>
     </div>
+
     <div class="image-container">
-    <img src="atualmente.jpeg" alt="Aniversário de namoro">
+        <img src="atualmente.jpeg" alt="Aniversário de namoro">
     </div>
 </section>
 
@@ -283,16 +265,10 @@ allowfullscreen></iframe>
         <h2>Nosso Vídeo Especial</h2>
         <p>Palavras não conseguem descrever o quanto você significa para mim, então fiz um vídeo para você meu amor, espero que goste! ❤️🥰</p>
         <br>
-        <iframe width="300" height="315"
-
-src="https://www.youtube.com/embed/YM4b2_wvsFw?
-
-si=9E5finpmwWF-Osbz"
+        <iframe width="300" height="315" src="https://www.youtube.com/embed/YM4b2_wvsFw?si=9E5finpmwWF-Osbz"
                 title="YouTube video player"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write;
-
-encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen>
         </iframe>
@@ -308,25 +284,15 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
         const anniversaryDate = new Date('2024-12-27T00:00:00'); //Próximo aniversário
 
         function updateTimers() {
-    const now = new Date();
+        const now = new Date();
 
     // Calculando o tempo juntos
     const timeTogether = now - startDate;
-    const togetherYears = Math.floor(timeTogether / (1000 * 60 * 60 * 24
-
-* 365));
-    const togetherDays = Math.floor((timeTogether % (1000 * 60 * 60 *
-
-24 * 365)) / (1000 * 60 * 60 * 24));
-    const togetherHours = Math.floor((timeTogether % (1000 * 60 * 60 *
-
-24)) / (1000 * 60 * 60));
-    const togetherMinutes = Math.floor((timeTogether % (1000 * 60 *
-
-60)) / (1000 * 60));
-    const togetherSeconds = Math.floor((timeTogether % (1000 * 60)) /
-
-1000);
+    const togetherYears = Math.floor(timeTogether / (1000 * 60 * 60 * 24 * 365));
+    const togetherDays = Math.floor((timeTogether % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+    const togetherHours = Math.floor((timeTogether % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const togetherMinutes = Math.floor((timeTogether % (1000 * 60 * 60)) / (1000 * 60));
+    const togetherSeconds = Math.floor((timeTogether % (1000 * 60)) / 1000);
 
     document.getElementById('timeTogether').innerHTML = `
         <span>${togetherYears} Anos</span><br>
@@ -340,18 +306,10 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
     const timeUntilAnniversary = anniversaryDate - now;
 
     if (timeUntilAnniversary > 0) {
-        const countdownDays = Math.floor(timeUntilAnniversary / (1000
-
-* 60 * 60 * 24));
-        const countdownHours = Math.floor((timeUntilAnniversary %
-
-(1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const countdownMinutes = Math.floor((timeUntilAnniversary %
-
-(1000 * 60 * 60)) / (1000 * 60));
-        const countdownSeconds = Math.floor((timeUntilAnniversary %
-
-(1000 * 60)) / 1000);
+        const countdownDays = Math.floor(timeUntilAnniversary / (1000 * 60 * 60 * 24));
+        const countdownHours = Math.floor((timeUntilAnniversary % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const countdownMinutes = Math.floor((timeUntilAnniversary % (1000 * 60 * 60)) / (1000 * 60));
+        const countdownSeconds = Math.floor((timeUntilAnniversary % (1000 * 60)) / 1000);
 
         document.getElementById('countdown').innerHTML = `
             <span>${countdownDays} Dias</span><br>
